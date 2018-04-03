@@ -35,6 +35,11 @@ Add nerdtree plugin globally for vim
 
 Add pyflakes detection globaly for salt (may require installing gvim on some platforms)
 
+``vim.colors``
+--------------
+
+Add colors (only Debian for now) 
+
 ``vim.absent``
 --------------
 
