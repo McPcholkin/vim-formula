@@ -1,3 +1,5 @@
+{%set vim_version = salt['cmd.run']('vim --version | head -n +1 | awk \'{print ($5)}\' | awk \'{gsub(/\.|\;/,"")}1\'') %}
+
 {% set vim = salt['grains.filter_by']({
     'Arch': {
         'pkg': 'vim',
@@ -14,7 +16,7 @@
         },
         'pkg': 'vim',
         'share_dir': '/usr/share/vim/vimfiles',
-        'colors_dir': '/usr/share/vim/vim74/colors',
+        'colors_dir': '/usr/share/vim/vim'~ vim_version ~'/colors',
         'group': 'root',
         'config_root': '/etc/vim',
     },
