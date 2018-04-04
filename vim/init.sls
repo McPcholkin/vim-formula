@@ -5,10 +5,10 @@ vim:
     - name: {{ vim.pkg }}
 
 {% if salt['pillar.get']('vim:managed_vimrc', True) == True %}
-{{ vim.config_root }}/vimrc:
+vim_file_vimrc:
   file.managed:
+    - name {{ vim.config_root }}/vimrc
     - source: salt://vim/files/vimrc
-    - template: jinja
     - user: root
     - group: {{ vim.group }}
     - mode: 644
